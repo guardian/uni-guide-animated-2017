@@ -1,0 +1,269 @@
+.ug16__table-container {
+    border-top: 2px solid #21c6dd;
+
+    table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+        content: " \25B4\25BE";
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        @include fs-textSans(4);
+    }
+    table caption {
+        background-color: #efefef;
+        text-align: left;
+        padding: 6px 10px;
+        label {
+            margin-right: 10px;
+        }
+
+        select {
+            width: 100%;
+            margin: 3px 0;
+            @include mq(tablet) {
+                margin: 0 10px 0 0;
+                width: auto;
+            }
+        }
+
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 5px;
+            @include fs-textSans(2);
+            font-weight: bold;
+            color: #005689;
+            text-decoration: none;
+            &::after {
+                content: "\00A0\00BB";
+            }
+        }
+    }
+    thead th {
+        background-color: #f9f9f7;
+        color: #333;
+        cursor: pointer;
+    }
+    tfoot,
+    tbody {
+        color: #676767;
+        font-weight: bold;
+        transition: opacity 0.2s ease-out;
+        &.is-loading {
+            opacity: 0.3;
+        }
+    }
+    tfoot td,
+    tbody td {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+    }
+    tfoot tr,
+    tbody tr {
+        cursor: pointer;
+        transition: opacity 0.1s ease-out;
+        background-color: #efefef;
+        &.row-1 {
+            background-color: #f9f9f7;
+        }
+    }
+
+    table th[data-h="Link"] {
+        font-size: 0;
+    }
+
+    table td,
+    table th {
+        margin: 0;
+        padding: 2px 4px;
+        text-align: center;
+
+        &[data-h="Institution"] {
+            text-align: left;
+            width: 50%;
+            @include mq(desktop) {
+                width: 22%;
+            }
+        }
+
+        &[data-h="Link"] {
+            text-align: right;
+        }
+
+        &[data-h="Rank 2015"],
+        &[data-h="Rank 2016"] {
+            width: 10%;
+            @include mq(desktop) {
+                width: 5%;
+            }
+        }
+
+        &[data-h="Guardian score/100"] {
+            width: 25%;
+            @include mq(desktop) {
+                width: auto;
+            }
+        }
+
+        display: none;
+        &[data-h="Rank 2016"],
+        &[data-h="Institution"],
+        &[data-h="Link"],
+        &[data-h="Guardian score/100"] {
+            display: table-cell;
+        }
+
+        @include mq(desktop) {
+            display: table-cell;
+        }
+    }
+
+    .ug16-table__institution-link {
+        background-image: url(assets/i_circle.png);
+        width: 16px;
+        height: 17px;
+        display: inline-block;
+    }
+
+    &.has-selected tfoot tr,
+    &.has-selected tbody tr {
+        opacity: 0.5;
+
+        &.is-selected,
+        &.ug16-table__course-list {
+            opacity: 1;
+        }
+        &.is-selected td {
+            border-top: 1px solid #bdbdbd;
+            background-color: white;
+        }
+        &.ug16-table__course-list td {
+            border-bottom: 1px solid #bdbdbd;
+            background-color: white;
+        }
+    }
+
+    .ug16-table__stats {
+        margin: 0;
+        font-weight: normal;
+
+        dt {
+            float: left;
+            padding-left: 10%;
+            width: 50%;
+            clear: left;
+        }
+        dd {
+            width: 25%;
+            float: left;
+            text-align: center;
+            margin: 0;
+        }
+        @include mq(desktop) {
+            display: none;
+        }
+    }
+
+    .ug16-table__course-list {
+        display: table-row;
+        font-size: 12px;
+        @include mq(desktop) {
+            font-size: 14px;
+        }
+
+        td {
+            text-align: left;
+            display: table-cell !important;
+            padding-bottom: 6px;
+        }
+
+        ul {
+            padding-top: 6px;
+            clear: both;
+            @include mq(desktop) {
+                margin: 0 5%;
+            }
+        }
+
+        li {
+            @include mq(desktop) {
+                border-top: 0;
+                padding: 0;
+            }
+        }
+
+    }
+
+    .ug16-table__unranked-msg {
+        @include fs-bodyCopy(2);
+        cursor: auto;
+        font-weight: normal;
+        background: white !important;
+        td {
+            padding: 3px 0;
+            text-align: left;
+            display: table-cell !important;
+        }
+    }
+
+    .ug16-table__footnote {
+        font-size: 14px;
+        margin: 0;
+        padding: 12px 0;
+    }
+
+    // Overall vs subject table differences
+    table td, table th {
+        &[data-h="Rank 2015"] {
+            display: none;
+        }
+    }
+
+    &[data-id="all"] {
+        // Only expand on below desktop
+        @include mq(desktop) {
+            tfoot tr,
+            tbody tr {
+                cursor: auto;
+            }
+            .ug16-table__course-list {
+                display: none
+            }
+            &.has-selected tfoot tr,
+            &.has-selected tbody tr {
+                opacity: 1;
+                td {
+                    background-color: inherit;
+                    border-top: 1px solid transparent;
+                }
+            }
+        }
+
+        .ug16-table__stats dt {
+            padding-left: 20%;
+        }
+
+        table td, table th {
+            &[data-h="Rank 2015"] {
+                display: table-cell;
+            }
+        }
+
+        .ug16-table__subject-link,
+        .ug16-table__footnote {
+            display: none;
+        }
+    }
+}
+
+
+.ug16__untruncate-btn--table {
+    @include mq(desktop) {
+        margin: 0 5%;
+    }
+    & + * {
+        display: none;
+    }
+}

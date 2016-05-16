@@ -1,0 +1,334 @@
+.ug16-search {
+    background-color: #efefef;
+    border-top: 2px solid #21c6dd;
+    padding: 6px 10px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    form {
+        @include mq(tablet) {
+            margin-right: -10px;
+        }
+        @include mq(desktop) {
+            padding-right: 100px;
+        }
+    }
+
+    button {
+        border: none;
+        border-radius: 4px;
+        color: #ffffff;
+        background-color: #005987;
+        padding: 0 20px;
+        height: 36px;
+        cursor: pointer;
+        display: block;
+        margin: 6px auto;
+        clear: both;
+        width: 100%;
+
+        @include mq(tablet) {
+            width: 80px;
+            margin: 0;
+            margin-left: 86px;
+        }
+
+        @include mq(desktop) {
+            width: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto 10px;
+        }
+        &:hover {
+            background-color: lighten(#005987, 5%);
+        }
+        &:disabled {
+            background-color: #bdbdbd;
+            cursor: default;
+        }
+    }
+    &, button, select, input {
+        @include fs-textSans(4);
+    }
+
+    &::after {
+        display: block;
+        clear: both;
+        content: " ";
+    }
+}
+
+.ug16-search__field--subject-area select:disabled,
+select#ug16-table__subject:disabled {
+    cursor: default;
+    background-color: #f7f7f7;
+}
+
+.ug16-search__field {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 3px 0;
+
+    @include mq(tablet) {
+        padding: 0 10px 12px 0;
+        float: left;
+        width: 50%;
+    }
+    @include mq(desktop) {
+        padding: 6px 10px 6px 0;
+    }
+    @include mq(wide) {
+        float: none;
+        width: auto;
+    }
+
+    label {
+        padding-right: 3px;
+        display: inline-block;
+        width: 80px;
+        @include mq(wide) {
+            width: auto;
+        }
+    }
+    input {
+        height: 30px;
+        box-sizing: border-box;
+        padding: 3px 5px;
+    }
+    select, input {
+        border-radius: 0;
+        border: 1px solid #bdbdbd;
+        width: 100%;
+        @include mq(tablet) {
+            width: calc(100% - 87px);
+        }
+        @include mq(wide) {
+            width: 200px;
+        }
+    }
+}
+
+.ug16-search-results__meta {
+    background-color: #f9f9f9;
+    color: #333;
+    position: relative;
+    @include fs-headline(2);
+    p {
+        margin: 0;
+        text-align: center;
+        padding: 24px 0;
+        @include mq($until: tablet) {
+            padding-right: 50px;
+            padding-left: 10px;
+            text-align: left;
+        }
+    }
+}
+
+.ug16-search-results {
+    overflow: hidden;
+    position: relative;
+}
+
+.ug16-search-results__subject {
+    clear: both;
+    margin-top: 20px !important;
+    position: relative;
+    padding: 12px 10px 0px;
+    border-top: 1px solid #bdbdbd;
+    &:first-child {
+        border-top: 0;
+    }
+}
+.ug16-search__institution-rank {
+    font-family: "Guardian Text Sans web";
+    display: inline-block;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    border-right: 1px solid #bdbdbd;
+    padding-right: 5px;
+}
+
+.ug16-search-results__close-btn {
+    background: transparent;
+    border: 0;
+    width: 28px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: content-box;
+    padding: 18px 10px;
+    cursor: pointer;
+    svg {
+        fill: #222;
+    }
+    &:hover svg {
+        fill: #444;
+    }
+}
+
+.ug16-search-results-group {
+    padding: 0 10px;
+}
+
+.ug16-search-result {
+    position: relative;
+    border-top: 1px solid #bdbdbd;
+    margin-bottom: 10px;
+    padding-top: 3px;
+
+    @include mq(desktop) {
+        &:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    &::after {
+        content: " ";
+        clear: both;
+        display: block;
+    }
+}
+
+.ug16-search-result__extra {
+    display: none;
+    @include mq(desktop) {
+        padding-top: 3px;
+        border-top: 1px solid #bdbdbd;
+    }
+}
+
+.ug16-search-result__extra-courses {
+    display: none;
+    border-top: 1px solid #eaeaea;
+    @include mq(tablet) {
+        border-top: 0;
+    }
+}
+
+.ug16-search-subject {
+    padding-top: 10px;
+    margin-bottom: 24px;
+}
+
+.ug16-search-subject__name,
+.ug16-search-subject__results {
+    padding-top: 3px;
+}
+
+.ug16-search-subject__name {
+    @include f-header;
+    line-height: 1;
+    color: #00456e;
+    font-size: 20px;
+    text-transform: lowercase;
+
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #005987;
+        white-space: nowrap;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .ug16-search__count {
+        display: block;
+        margin-bottom: 12px;
+    }
+    border-top: 1px solid #4bc6df;
+    @include mq(desktop) {
+        margin: 0px 20px 0 0;
+        float: left;
+        width: 220px;
+
+        a {
+            display: block;
+            margin-top: 6px;
+        }
+    }
+}
+
+.ug16-search-subject__results {
+    overflow: hidden;
+
+    @include mq(desktop) {
+        border-top: 1px solid #4bc6df;
+    }
+}
+
+.ug16-search__ranking,
+.ug16-search__count {
+    @include f-textSans;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.ug16-search__ranking {
+    margin-top: 3px;
+}
+
+.ug16-search__count {
+    color: #767676;
+    margin-top: 8px;
+}
+
+.ug16-search__course-list {
+    overflow: hidden;
+    font-size: 12px;
+
+    li {
+        @include mq(tablet) {
+            border-top: 0;
+            font-size: 14px;
+            padding: 0;
+        }
+    }
+}
+
+.ug16-search__institution {
+    font-size: 16px;
+    padding: 0;
+    margin: 0 0 10px 0;
+
+    @include mq(tablet) {
+        float: left;
+        width: 250px;
+        margin-right: 20px;
+    }
+}
+
+
+.ug16__untruncate-btn {
+    @include fs-textSans(1);
+    line-height: 22px;
+    font-weight: bold;
+    padding-right: 10px;
+    border: 0;
+    background-color: #efefef;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    margin-top: 6px;
+
+    &:hover {
+        background-color: #e1e1e1;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-right: 3px;
+        fill: #333;
+        margin-top: -2px;
+    }
+}

@@ -1,0 +1,160 @@
+@mixin animation($args) {
+  -ms-animation: #{$args};
+  -moz-animation: #{$args};
+  -webkit-animation: #{$args};
+  animation: #{$args};
+}
+
+@mixin transformAnim($name, $px) {
+
+  @-webkit-keyframes #{$name} {
+     from {
+       -moz-transform: translateX(0);
+       transform: translateX(0);
+     }
+     to {
+       -moz-transform: translateX($px);
+       transform: translateX($px);
+     }
+  }
+
+  @keyframes #{$name} {
+     from {
+       -moz-transform: translateX(0);
+       transform: translateX(0);
+     }
+     to {
+       -moz-transform: translateX($px);
+       transform: translateX($px);
+     }
+  }
+}
+
+@include transformAnim(movefgbg, 2600px);
+@include transformAnim(moveTrain, -4604px);
+@include transformAnim(moveskyline, 6803px);
+
+.ug16__animation-container{
+
+    .show-mobile{
+        display: block;
+        @include mq(mobileLandscape) {
+            display: none;
+        }
+      }
+
+
+    .show-non-mobile{
+      display: none;
+          @include mq(mobileLandscape) {
+               display:block;
+          }
+
+    }
+
+    .static-image-holder{
+      position:relative;
+      height: 138px;
+      width:100%;
+      background: url('assets/ani-288-h/bg-mobile.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+
+    .ug16__animation-holder{
+
+
+       @include mq(tablet) {
+            max-width: 740px;
+        }
+
+        @include mq(desktop) {
+            max-width: 980px;
+        }
+
+        @include mq(1140px) {
+            max-width: 1140px;
+        }
+
+        @include mq(wide) {
+            max-width: 1300px;
+        }
+
+        margin: 0 auto;
+
+      position:relative;
+      height: 280px;
+      width:100%;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      background: url('assets/ani-Desktop/0-bg.gif');
+      overflow:hidden;
+    }
+
+    .ug16__anim {
+      position:absolute;
+      top:0px;
+      width:100%;
+      height:280px;
+    }
+
+    .ug16__anim--people {
+      height: 280px;
+      width: 100%;
+      background: url("assets/ani-288-h/doods-sprite.png") center 0px repeat-y;
+
+    }
+
+    // .ug16__anim--skyline {
+    //   will-change: transform;
+    // }
+
+
+    .ug16__anim--skyline {
+      background: url('assets/ani-Desktop/0-sky.gif');
+      background-repeat: repeat-x;
+      background-position: left;
+      width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
+      @include animation(moveskyline 600s linear infinite);
+
+    }
+
+    .ug16__anim--buildings {
+      background: url('assets/ani-Desktop/1-buildings.gif');
+      background-repeat: repeat-x;
+      background-position: left;
+      width: 3900px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
+      @include animation(movefgbg 240s linear infinite);
+
+    }
+
+    .ug16__anim--wheels {
+      background: url('assets/ani-Desktop/2-wheels.gif');
+      background-repeat: repeat-x;
+      background-position: left;
+      width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
+       @include animation(moveTrain 15s linear infinite); //30s 
+    }
+
+
+   .ug16__anim--train {
+      background: url('assets/ani-Desktop/3-train.gif');
+      background-repeat: repeat-x;
+      background-position: left;
+      width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
+       @include animation(moveTrain 15s linear infinite); //30s 
+    }
+
+
+
+   
+
+    .ug16__anim--fg {
+      left:-600px;
+      background: url('assets/ani-Desktop/4-hedge.png');
+      background-repeat: repeat-x;
+      background-position: left;
+      width: 3900px * 1;
+      @include animation(movefgbg 15s linear infinite);
+    }
+}
