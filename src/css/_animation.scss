@@ -133,7 +133,7 @@
       background-repeat: repeat-x;
       background-position: left;
       width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
-       @include animation(moveTrain 15s linear infinite); //30s 
+       @include animation(moveTrain 24s linear infinite); //30s 
     }
 
 
@@ -142,7 +142,7 @@
       background-repeat: repeat-x;
       background-position: left;
       width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
-       @include animation(moveTrain 15s linear infinite); //30s 
+       @include animation(moveTrain 24s linear infinite); //30s 
     }
 
 
