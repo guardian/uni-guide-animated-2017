@@ -1,4 +1,16 @@
 [
+  {
+    "institutionId":"0230",
+    "guardianHeiTitle":"Plymouth College of Art",
+    "ukPrn":"10005127",
+    "providerName":"Plymouth College of Art",
+    "postcode":"PL4 8AT",
+    "missionGroup":"",
+    "longitude":-4.1371170,
+    "latitude":50.373322,
+    "easting":248127,
+    "northing":54787
+  },
 
   {
     "institutionId":"0156",
@@ -664,7 +676,7 @@
     "institutionId":"0010",
     "guardianHeiTitle":"Royal Central School of Speech & Drama",
     "ukPrn":"10007816",
-    "providerName":"CENTRAL SCHOOL OF SPEECH AND DRAMA(THE)",
+    "providerName":"ROYAL CENTRAL SCHOOL OF SPEECH AND DRAMA(THE)",
     "postcode":"NW3 3HY",
     "missionGroup":"",
     "longitude":-0.174179,

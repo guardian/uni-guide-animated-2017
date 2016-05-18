@@ -21,8 +21,8 @@ for id, institution in institutionDetails.iteritems():
     if id in institutionalRankings:
         institution.update(institutionalRankings[id])
 
-        if institution.get('rank2015', '').isdigit():
-            institution['rank2015'] = '(' + institution['rank2015'] + ')'
+        if institution.get('rank2016', '').isdigit():
+            institution['rank2016'] = '(' + institution['rank2016'] + ')'
 
     institution['link'] = institutionLinks.get(institution['guardianHeiTitle'], '')
 
@@ -50,9 +50,13 @@ for gsgId, name in subjectNames.iteritems():
         institution['courses'] = get_courses(id, gsgId)
         myInsts.append(institution)
 
+    link = subjectLinks.get(name.lower(), '')
+    if not link:
+        print >> sys.stderr, 'Link not found for', name
+
     subjects[gsgId] = {
         'name': name,
-        'link': subjectLinks[name.lower()],
+        'link': link,
         'institutions': myInsts
     }
 
@@ -79,7 +83,7 @@ common_fields = ('guardianHeiTitle', 'guardianScore', 'percentSatisfiedOverall',
 
 # Institution ranking
 
-institutions_fields = ('institutionId', 'rank2016', 'rank2015') + common_fields
+institutions_fields = ('institutionId', 'rank2017', 'rank2016') + common_fields
 institutions_out = {id: pick(institution, institutions_fields) for id, institution in institutions.iteritems()}
 with open('src/js/data/institutions.json', 'w') as f:
     json.dump(institutions_out, f)

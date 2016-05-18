@@ -154,6 +154,7 @@ sorttable = {
 
 	        tb = this.sorttable_tbody;
 	        for (var j=0; j<row_array.length; j++) {
+	          row_array[j][1].className = 'row-' + (j % 2);
 	          tb.appendChild(row_array[j][1]);
 	        }
 

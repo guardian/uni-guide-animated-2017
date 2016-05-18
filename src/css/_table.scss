@@ -92,8 +92,8 @@
             text-align: right;
         }
 
-        &[data-h="Rank 2015"],
-        &[data-h="Rank 2016"] {
+        &[data-h="Rank 2016"],
+        &[data-h="Rank 2017"] {
             width: 10%;
             @include mq(desktop) {
                 width: 5%;
@@ -108,7 +108,7 @@
         }
 
         display: none;
-        &[data-h="Rank 2016"],
+        &[data-h="Rank 2017"],
         &[data-h="Institution"],
         &[data-h="Link"],
         &[data-h="Guardian score/100"] {
@@ -216,7 +216,7 @@
 
     // Overall vs subject table differences
     table td, table th {
-        &[data-h="Rank 2015"] {
+        &[data-h="Rank 2016"] {
             display: none;
         }
     }
@@ -246,7 +246,7 @@
         }
 
         table td, table th {
-            &[data-h="Rank 2015"] {
+            &[data-h="Rank 2016"] {
                 display: table-cell;
             }
         }
