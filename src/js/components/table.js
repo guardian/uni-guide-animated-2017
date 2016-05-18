@@ -10,8 +10,8 @@ import institutions from '../data/institutions.json!json'
 import subjectNames from '../data/subjectNames.json!json'
 
 const headers = [
+    {'name': 'Rank 2017', 'type': 'numeric'},
     {'name': 'Rank 2016', 'type': 'numeric'},
-    {'name': 'Rank 2015', 'type': 'numeric'},
     {'name': 'Institution', 'type': 'alpha'},
     {'name': 'Guardian score/100', 'type': 'numeric'},
     {'name': 'Satisfied with course', 'type': 'numeric'},
