@@ -17,7 +17,7 @@ function init(el, config) {
     setConfig(config);
     el.innerHTML = mainTemplateFn({
         headline: config.headline,
-        standfirst: config.standfirst,
+        // standfirst: config.standfirst,
         subject: lowercaseSubjectName(config.subjectId)
     });
 
