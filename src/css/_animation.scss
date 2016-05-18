@@ -146,7 +146,7 @@
       background-repeat: repeat-x;
       background-position: left;
       width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
-       @include animation(moveTrain 24s linear infinite); //30s 
+       @include animation(moveTrain 21s linear infinite); //30s 
     }
 
 
@@ -156,7 +156,7 @@
       background-repeat: repeat-x;
       background-position: left;
       width: 6436px * 1; //6436px tiles the background correctly for the animation to loop 'seamlessly'
-       @include animation(moveTrain 24s linear infinite); //30s 
+       @include animation(moveTrain 21s linear infinite); //30s 
     }
 
 
@@ -169,8 +169,8 @@
       background: url('assets/ani-Desktop/4-hedge.png');
       background-repeat: repeat-x;
       background-position: left;
-      width: 3900px * 1;
-      @include animation(movefgbg 15s linear infinite);
+      width: 6436px * 1;
+      @include animation(movefgbg 21s linear infinite);
       animation-direction: reverse;
     }
 }
