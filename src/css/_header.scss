@@ -58,6 +58,14 @@
       color: #F1F1F1;
   }
 
+  .ug1617__credit{
+    
+    @include fs-textSans(2);
+      @include mq(tablet) {
+            margin-top:54px;
+        }
+  }
+
 }
 
 .ug16__header-left {

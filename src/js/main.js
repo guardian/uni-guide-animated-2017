@@ -15,9 +15,10 @@ var mainTemplateFn = doT.template(mainTemplate);
 function init(el, config) {
     console.log(config)
     setConfig(config);
+    config.credit = "illustration: Adam Avery"
     el.innerHTML = mainTemplateFn({
         headline: config.headline,
-        // standfirst: config.standfirst,
+        credit: config.credit,
         subject: lowercaseSubjectName(config.subjectId)
     });
 
