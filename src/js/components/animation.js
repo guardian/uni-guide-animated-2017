@@ -16,6 +16,7 @@ export default class Animation {
             <div class="ug16__animation-holder show-non-mobile">
                 <div class="ug16__anim ug16__anim--skyline"></div> 
                 <div class="ug16__anim ug16__anim--buildings"></div> 
+                <div class="ug16__anim ug16__anim--trees"></div>
                 <div class="ug16__anim ug16__anim--wheels"></div> 
                 <div class="ug16__anim ug16__anim--train"></div>
                 <div class="ug16__anim ug16__anim--fg"></div>
