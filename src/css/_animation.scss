@@ -35,6 +35,9 @@
 @include transformAnim(moveskyline, -6082px);
 
 .ug16__animation-container{
+    @include mq(mobileLandscape) {
+        margin-top: -14px;
+    }
 
     .show-mobile{
         display: block;
@@ -170,7 +173,7 @@
       background-repeat: repeat-x;
       background-position: left;
       width: 6436px * 1;
-      @include animation(movefgbg 21s linear infinite);
+      @include animation(movefgbg 30s linear infinite);
       animation-direction: reverse;
     }
 }
