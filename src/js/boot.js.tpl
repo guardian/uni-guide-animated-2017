@@ -30,7 +30,7 @@ define([], function() {
 
             // Load JS and init
             require(['{{ assetPath }}/main.js'], function(main) {
-                main.default.init(el, config);
+                main.init(el, config);
             }, function(err) { console.error('Error loading boot.', err); });
         }
     };

@@ -12,7 +12,7 @@ import { lowercase as lowercaseSubjectName } from './lib/subjectNames'
 
 var mainTemplateFn = doT.template(mainTemplate);
 
-function init(el, config) {
+export function init(el, config) {
     console.log(config)
     setConfig(config);
     el.innerHTML = mainTemplateFn({
@@ -53,5 +53,3 @@ function init(el, config) {
         document.querySelector('.l-footer').style.display = 'block';
     }
 }
-
-export default {init: init};
