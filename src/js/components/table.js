@@ -71,7 +71,7 @@ export default class Table {
                     <caption>
                         <label for="ug16-table__subject">Subject area</label>
                         <select id="ug16-table__subject"${subjectDisabled}></select>
-                        <a href="http://gu.com/p/492f9/">How to use these tables</a>
+                        <a href="http://gu.com/p/4jc9g">How to use these tables</a>
                         <span class="ug16-table__subject-link"></span>
                     </caption>
                     <thead><tr>${this.headersHTML}</tr></thead>
