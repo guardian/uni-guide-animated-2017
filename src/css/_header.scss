@@ -62,7 +62,7 @@
     
     @include fs-textSans(2);
       @include mq(tablet) {
-            margin-top:14px;
+            margin:14px 0;
         }
   }
 
